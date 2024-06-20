@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Weather App - Austin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item">    
+            <div class="historyBox">
+                <div class="historyTitle">History</div>
+                <ul id="historyList"></ul>
+                <button>Delete History</button>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="box">
+                <div class="searchBar">
+                    <input type="text" placeholder="Enter city name" spellcheck="false">
+                    <button><img src="assets/free-search-icon-2911-thumb.png" width="25" height="25"></button>
+                </div>
+                <div class="weather">
+                    <img src="assets/sunny.png" width="125" height="125" class="icon">
+                    <h1 class="temperature">75°f</h1>
+                    <h2 class="city">Morton Grove</h2>
+                    <div class="specifics">
+                        <div class="column">
+                            <img src="assets/precipitation.jpg" width="75" height="75">
+                            <div>
+                                <p class="rain">5%</p>
+                                <p>Precipitation</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <img src="assets/wind.png" width="75" height="75">
+                            <div>
+                                <img src="assets/north.png" width="50" height="50">
+                                <p class="wind">6 mph</p>
+                                <p>Wind Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">    
+            <div class="fullWeatherBox">
+                <div class="fullWeatherTitle">Additional Details</div>
+                    <div class="details">
+                        <div class="column2">
+                            <div>Description</div>
+                            <div>Feels Like</div>
+                            <div>High/Low</div>
+                            <div>Pressure</div>   
+                            <div>Visibility</div> 
+                            <div>Cloudiness</div>
+                        </div>
+                        <div class="column3">
+                            <div class="description">Sunny</div>
+                            <div class="feelsLike">80°f</div>
+                            <div class="highLow">83°f/80°f</div>
+                            <div class="pressure">1013 hPa</div>   
+                            <div class="visibility">10000 m</div> 
+                            <div class="cloudiness">100%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+
+</body>
+
+</html>
