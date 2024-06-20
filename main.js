@@ -1,4 +1,4 @@
-const apiKey = "28117ac2042593312acecb2d396ab235";
+import apiKey from "secret.js";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=";
 
 const history           = document.getElementById("historyList");
