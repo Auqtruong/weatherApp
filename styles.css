@@ -86,7 +86,7 @@ body {
 }
 
 .icon {
-    width:          125px;
+    width:          200px;
     margin-top:     50px;
 }
 
@@ -105,17 +105,17 @@ body {
 
 .specifics {
     display:         flex;
-    padding:         0 40px;
+    padding:         0 10px;
     align-items:     center;
     justify-content: space-between;
-    margin-top:      45px;
+    margin-top:      35px;
 }
 
 .column {
     display:        flex;
     align-items:    center;
     text-align:     left;
-    font-size:      20px;
+    font-size:      15px;
 }
 
 .column img {
