@@ -5,12 +5,13 @@ const delHistoryButton  = document.querySelector(".historyBox button");
 const searchBarBox      = document.querySelector(".searchBar input");
 const searchBarButton   = document.querySelector(".searchBar button");
 const weatherIcon       = document.querySelector(".icon");
-const savedCityBtn      = document.querySelector(".cityButton button");
+const historyBox        = document.querySelector("#historyBox");
 
 //history exists or empty array/list
 let saved = localStorage.getItem("historyList") ? JSON.parse(localStorage.getItem("historyList")) : [];
 
-async function grabWeatherData(city) {
+//use api to fetch weather information
+async function grabWeatherData(city, isFromHistory = false) {
     const resp  = await fetch(apiUrl + city + `&appid=${apiKey}`);
     let data    = await resp.json();
 
@@ -67,37 +68,38 @@ async function grabWeatherData(city) {
         case "Tornado":
             weatherIcon.src = "assets/tornado.png";
             break;
-    }   
+    }
+    
+    city = city.toLowerCase();
 
-    saved.push(city);
-    localStorage.setItem("historyList", JSON.stringify(saved));
-    buildHistory(city);
+    if(!saved.includes(city)){
+        saved.push(city);
+        saved = [...new Set(saved)];
+        localStorage.setItem("historyList", JSON.stringify(saved));
+        buildHistory(city);
+    }
 
     searchBarBox.value = "";
 }
 
 //build history list
 const buildHistory = (text) => {
-    const list      = document.createElement("li");
-    const hist      = document.createElement("button");
-    hist.classList.add('cityButton')
-    hist.innerText  = text;
-    list.appendChild(hist);
+        const list      = document.createElement("li");
+        const hist      = document.createElement("button");
+        hist.classList.add('cityButton')
+        hist.innerText  = text;
+        list.appendChild(hist);
+        
+        hist.addEventListener("click", () =>{
+            grabWeatherData(text, true);
+        })
 
-    document.getElementById("historyList").appendChild(list);
+        document.getElementById("historyList").appendChild(list);
 }
 
-//display search history
-saved.forEach(displaySaved);
+//display persisting search history
+saved.forEach(buildHistory);
 
-
-//create button for city
-function displaySaved(city){
-    const btn = document.createElement("button");
-    btn.className = 'cityButton'
-    btn.innerText = city;
-    document.getElementById("historyList").appendChild(btn);
-}
 
 //check local storage/searches
 //TO BE REMOVED
@@ -123,11 +125,6 @@ document.onkeydown = (Event) => {
         grabWeatherData(searchBarBox.value);
     }
 }
-
-// savedCityBtn.addEventListener("click", () => {
-//     grabWeatherData(savedCityBtn.innerText);
-// })
-
 
 
 
