@@ -5,7 +5,6 @@ const delHistoryButton  = document.querySelector(".historyBox button");
 const searchBarBox      = document.querySelector(".searchBar input");
 const searchBarButton   = document.querySelector(".searchBar button");
 const weatherIcon       = document.querySelector(".icon");
-const historyBox        = document.querySelector("#historyBox");
 
 //history exists or empty array/list
 let saved = localStorage.getItem("historyList") ? JSON.parse(localStorage.getItem("historyList")) : [];
