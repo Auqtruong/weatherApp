@@ -22,10 +22,14 @@
                     <input type="text" placeholder="Enter city name" spellcheck="false">
                     <button><img src="assets/free-search-icon-2911-thumb.png" width="25" height="25"></button>
                 </div>
+                <div class="invalid">
+                    <p>Invalid city name</p>
+                </div>
                 <div class="weather">
                     <img src="assets/sunny.png" width="200" height="200" class="icon">
                     <h1 class="temperature">75°f</h1>
                     <h2 class="city">Morton Grove</h2>
+                    <h2 class="country"></h2>
                     <div class="specifics">
                         <div class="column">
                             <img src="assets/precipitation.jpg" width="75" height="75">
@@ -37,9 +41,11 @@
                         <div class="column">
                             <img src="assets/wind.png" width="75" height="75">
                             <div>
-                                <!-- <img src="assets/north.png" width="50" height="50"> -->
-                                <p class="wind">6 mph</p>
-                                <p>Wind Speed</p>
+                                <div class="windBox">
+                                    <p class="wind">6 mph</p>
+                                    <img src="assets/n.png" width="50" height="50" class="direction">
+                                </div>
+                                <p class="windText">Wind Speed</p>
                             </div>
                         </div>
                     </div>
@@ -51,14 +57,14 @@
                 <div class="fullWeatherTitle">Additional Details</div>
                     <div class="details">
                         <div class="column2">
-                            <div>Description</div>
-                            <div>Feels Like</div>
-                            <div>High/Low</div>
-                            <div>Pressure</div>   
-                            <div>Visibility</div> 
-                            <div>Cloudiness</div>
+                            <div>Description:</div>
+                            <div>Feels Like:</div>
+                            <div>High/Low:</div>
+                            <div>Pressure:</div>   
+                            <div>Visibility:</div> 
+                            <div>Cloudiness:</div>
                         </div>
-                        <div class="column3">
+                        <div class="column2">
                             <div class="description">Sunny</div>
                             <div class="feelsLike">80°f</div>
                             <div class="highLow">83°f/80°f</div>

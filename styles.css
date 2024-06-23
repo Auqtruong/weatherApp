@@ -1,12 +1,12 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: Comic sans ms;
+    font-family: Geneva;
     box-sizing: border-box;
 }
 
 body {
-    background: rgb(163, 40, 239)
+    background: rgb(1, 61, 131)
 }
 
 .grid-container {
@@ -15,7 +15,7 @@ body {
 }
 
 .box {
-    width:          60%;
+    width:          80%;
     max-width:      600px;
     color:          white;
     background:     linear-gradient(45deg, #01aff3, #14ab00);
@@ -26,7 +26,7 @@ body {
 }
 
 .historyBox {
-    width:          60%;
+    width:          70%;
     max-width:      600px;
     color:          white;
     background:     linear-gradient(45deg, #01aff3, #14ab00);
@@ -40,8 +40,20 @@ body {
     font-size: 30px;
 }
 
+.historyBox button{
+    min-width:      50%;
+    border-radius:  7px;
+    font-size:      18px;
+    cursor:         pointer;
+}
+
+.historyBox button:hover{
+    background-color:   rgb(255, 255, 255);
+    color:              black;
+}
+
 .fullWeatherBox {
-    width:          60%;
+    width:          70%;
     max-width:      600px;
     color:          white;
     background:     linear-gradient(45deg, #01aff3, #14ab00);
@@ -90,10 +102,22 @@ body {
     margin-top:     50px;
 }
 
+.invalid {
+    font-size:      20px;
+    text-align:     left;
+    padding:        10px 0px 0px 25px;
+    display:        none;
+}
+
+.weather {
+    display:        none;
+}
+
 .weather h1 {
     font-size:      60px;
     font-weight:    400;
-    margin-top:     20px;
+    margin-top:     10px;
+    line-height:    1.2;
 
 }
 
@@ -101,47 +125,79 @@ body {
     font-size:      45px;
     font-weight:    300;
     margin-top:     -10px;
+    line-height:    1.4;
 }
 
 .specifics {
     display:         flex;
-    padding:         0 10px;
+    padding:         0 50px;
     align-items:     center;
     justify-content: space-between;
     margin-top:      35px;
 }
 
 .column {
-    display:        flex;
-    align-items:    center;
-    text-align:     left;
-    font-size:      15px;
+    & { 
+        min-width:      50%;
+        display:        flex;
+        align-items:    center;
+        text-align:     left;
+        font-size:      18px;     
+    }
+
+    .rain {
+        font-size: 30px;
+        min-width: 100%;
+    }
+
+    .wind {
+        font-size: 30px;
+        min-width: 100%;
+        margin-top: -15px;
+    }
 }
 
 .column img {
-    margin-right:   20px;
-    width:          75px;
+    margin-right:   25px; 
+}p
+
+.column2 {
+    line-height: 1.2;
 }
 
 .details {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    font-size: 20px;
+    display:                none;
+    grid-template-columns:  repeat(2, 1fr);
+    font-size:              18px;
+    text-transform:         capitalize;
+    padding:                10px 0px 0px 50px
 }
 
-.rain,
-.wind {
-    font-size:      30px;
-    margin-top:     25px;
+.windBox {
+    & {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    img {
+        /* margin-right: 0px; */
+    }
+}
+
+.windText {
+    margin-top: -15px;
 }
 
 .cityButton{
-    background: none;
-    border:     none;
-    cursor:     pointer;
-    font-size:  18px;
+    background:     none;
+    border:         none;
+    cursor:         pointer;
+    font-size:      18px;
+    text-transform: capitalize;
+    color:          white;
 }
 
 .details {
-    text-align: left;
+    text-align:     left;
 }
