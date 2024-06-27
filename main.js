@@ -12,8 +12,10 @@ let saved = localStorage.getItem("historyList") ? JSON.parse(localStorage.getIte
 
 //use api to fetch weather information
 async function grabWeatherData(city) {
+
     const resp  = await fetch(apiUrl + city + `&appid=${apiKey}`);
 
+    //invalid city search
     if(resp.status == 404){
         document.querySelector(".invalid").style.display = "block";
         document.querySelector(".weather").style.display = "none";
@@ -21,15 +23,15 @@ async function grabWeatherData(city) {
 
     let data = await resp.json();
 
-
-    console.log(data);
+    // console.log(data);
 
     document.querySelector(".city").innerHTML        = data.name;
+
     if(data.sys.country){
-        document.querySelector(".country").innerHTML     = data.sys.country;
+        document.querySelector(".country").innerHTML = data.sys.country;
     }
     else{
-        document.querySelector(".country").innerHTML     = "N/A";
+        document.querySelector(".country").innerHTML = "N/A";
     }
     document.querySelector(".temperature").innerHTML = Math.round(data.main.temp) + "°f";
     document.querySelector(".rain").innerHTML        = data.main.humidity + "%";
@@ -165,10 +167,10 @@ saved.forEach(buildHistory);
 
 //check local storage/searches
 //TO BE REMOVED
-console.log("local storage");
-for (i = 0; i < localStorage.length; i++)   {
-    console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
-}
+// console.log("local storage");
+// for (i = 0; i < localStorage.length; i++)   {
+//     console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
+// }
 
 //delete search history on click
 delHistoryButton.addEventListener("click", () => {
